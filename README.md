@@ -1,4 +1,4 @@
-# Laravel 10 自動將刪除的記錄複製到另一個資料表
+# Laravel 11 自動將刪除的記錄複製到另一個資料表
 
 引入 spatie 的 laravel-deleted-models 套件來擴增自動將刪除的記錄複製到另一個資料表，可以將其視為模型資源回收桶。
 
@@ -26,5 +26,5 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/LaDzClX.png)
+![](https://i.imgur.com/VNAh67N.png)
 > 將已刪除的文章從資源回收筒還原
