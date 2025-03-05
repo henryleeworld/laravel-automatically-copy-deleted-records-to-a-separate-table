@@ -9,12 +9,13 @@ use Spatie\DeletedModels\Models\Concerns\KeepsDeletedModels;
 
 class Post extends Model
 {
+    /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory, KeepsDeletedModels;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
     protected $fillable = [
         'user_id',
@@ -23,16 +24,19 @@ class Post extends Model
     ];
 
     /**
-     * The attributes that should be mutated to dates.
+     * Get the attributes that should be cast.
      *
-     * @var array
+     * @return array<string, string>
      */
-    protected $dates = [
-        'posted_at'
-    ];
+    protected function casts(): array
+    {
+        return [
+            'posted_at' => 'date',
+        ];
+    }
 
     /**
-     * Return the post's author
+     * Get the user that owns the post.
      */
     public function user(): BelongsTo
     {

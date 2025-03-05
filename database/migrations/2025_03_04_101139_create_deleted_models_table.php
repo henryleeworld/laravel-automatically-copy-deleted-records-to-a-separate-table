@@ -6,10 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('deleted_models', function (Blueprint $table) {
             $table->id();
@@ -22,13 +19,5 @@ return new class extends Migration
 
             $table->unique(['model', 'key']);
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('deleted_models');
     }
 };
